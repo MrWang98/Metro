@@ -23,9 +23,9 @@ def getData(start_time):
 
         startArray = datetime.datetime.strptime(start_time, "%Y-%m-%d %H:%M:%S")
         date = []
-        date.append(start_time)
         date.append(datetime.datetime.strftime(startArray-datetime.timedelta(hours=6), "%Y-%m-%d %H:%M:%S"))
         date.append(datetime.datetime.strftime(startArray-datetime.timedelta(hours=12), "%Y-%m-%d %H:%M:%S"))
+        date.append(datetime.datetime.strftime(startArray-datetime.timedelta(hours=18), "%Y-%m-%d %H:%M:%S"))
         date.append(datetime.datetime.strftime(startArray-datetime.timedelta(hours=24), "%Y-%m-%d %H:%M:%S"))
         date.append(datetime.datetime.strftime(startArray-datetime.timedelta(hours=24*7), "%Y-%m-%d %H:%M:%S"))
 
@@ -66,7 +66,7 @@ def getData(start_time):
         return in_data,out_data
 
 if __name__ == '__main__':
-        #要预测的时间片开始时间的往前6个小时，例如要预测[2020-01-28 12:00:00]之后6个小时的流量，这个开始时间就是[2020-01-28 06:00:00]
+        #要预测的时间片开始时间
         #且开始时间只能是[00:00:00、06:00:00、12:00:00、18:00:00]中的一个，被6整除的小时
         start_time = "2020-04-28 06:00:00"
 

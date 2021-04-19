@@ -39,9 +39,9 @@ def preprocessing(in_data,out_data,start_time):
 
     startArray = datetime.datetime.strptime(start_time, "%Y-%m-%d %H:%M:%S")
     date = []
-    date.append(start_time)
     date.append(datetime.datetime.strftime(startArray - datetime.timedelta(hours=6), "%Y-%m-%d %H:%M:%S"))
     date.append(datetime.datetime.strftime(startArray - datetime.timedelta(hours=12), "%Y-%m-%d %H:%M:%S"))
+    date.append(datetime.datetime.strftime(startArray - datetime.timedelta(hours=18), "%Y-%m-%d %H:%M:%S"))
     date.append(datetime.datetime.strftime(startArray - datetime.timedelta(hours=24), "%Y-%m-%d %H:%M:%S"))
     date.append(datetime.datetime.strftime(startArray - datetime.timedelta(hours=24 * 7), "%Y-%m-%d %H:%M:%S"))
 
